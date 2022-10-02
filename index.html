@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/favicon-32x32.png" type="image/x-icon">
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.7.0"></script>
+        <link rel="stylesheet" href="/styles.css" />
+  
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.5.1/dist/tfjs-vis.umd.min.js"></script>
+    <title>BKWrite</title>
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body style="align-items: center; justify-content: center">
+
+      <div class="countainer" style="align-items: center; justify-content: center">
+    
+        <div class="output"><h1 style="box-shadow: 0 0 35px #1a6bee; margin-top:20px; margin-bottom: 20px; color: #1a6bee ;border: 2px solid #1a6bee" id="result">Prediction</h1></div>
+        <a onclick="talk()"><img class="imga" src="1486564396-audio_81506.svg" style="margin-bottom:20px;" width="70px" height="50px"></a>
+        <script>
+        
+          function talk() {
+          speechSynthesis.speak(new SpeechSynthesisUtterance(y.argMax(1).dataSync())
+          ) 
+        
+          }
+  
+  
+        </script>
+        
+        <div class="countainerr"  style=" align-items: center; justify-content: center">
+          <canvas
+          id="canvas"
+          width="500px"
+          height="500px"
+          class="canvas"
+          style=" border-radius: 15%; border: 5px solid #1a6bee; margin-top: 25px; align-items: center; justify-content: center; box-shadow: 0 0 100px #1a6bee;"
+        >
+      </canvas> 
+  
+      
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items: center;margin-bottom: 20px; margin-top: 20px">
+          
+        <a
+          class ="button"
+          style="--clr:#1e9bff"
+  
+          onclick="predictModel()">
+            <span>PREDICT</span><i></i>
+        </a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+  
+    
+          <a
+            class="button"
+            style="--clr:#1e9bff"
+  
+            onclick="erase()"
+          > 
+            <span>CLEAR</span><i></i>
+      </a>
+      
+        </div>
+      
+      <img src="" />
+    </div>
+
+    <video id="bgvid" playsinline autoplay muted loop>
+      <source src="/Transition - 23325.mp4" type="video/mp4" />
+    </video>
+
+  <script src="script.js"></script>
+    </div>
+  </body>
+</html>
